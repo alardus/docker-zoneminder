@@ -2,11 +2,11 @@
 
 Setup folders:
 ```
-mkdir /volume1/camera/zm
-mkdir /volume1/camera/zm/zoneminder
-mkdir /volume1/camera/zm/etc_zm
-mkdir /volume1/camera/zm/config
-mkdir /volume1/camera/zm/log
+mkdir /volume3/camera/zm
+mkdir /volume3/camera/zm/zoneminder
+mkdir /volume3/camera/zm/etc_zm
+mkdir /volume3/camera/zm/config
+mkdir /volume3/camera/zm/log
 ```
 
 Start mysql:
