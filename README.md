@@ -1,3 +1,15 @@
+# Just a note for myself (zm on synology)
+
+mkdir /volume1/camera/zm
+mkdir /volume1/camera/zm/zoneminder
+mkdir /volume1/camera/zm/etc_zm
+mkdir /volume1/camera/zm/config
+mkdir /volume1/camera/zm/log
+
+docker run -d -e TZ=Europe/Moscow -e MYSQL_USER=zmuser -e MYSQL_PASSWORD=zmpass -e MYSQL_DATABASE=zm -e MYSQL_ROOT_PASSWORD=mysqlpsswd -e MYSQL_ROOT_HOST=% --net net --name db mysql/mysql-server:5.7
+
+docker run -d --shm-size=4096m -e TZ=Europe/Moscow -v /volume3/camera/zm/zoneminder:/var/cache/zoneminder -v /volume3/camera/zm/etc_zm:/etc/zm -v /volume3/camera/zm/config:/config -v /volume3/camera/zm/log:/var/log/zm -e ZM_DB_HOST=db --net net --name zm -p {externalport}:(internalport) quantumobject/docker-zoneminder
+
 # docker-zoneminder
 
 Docker container for [zoneminder v1.34.9][3]
