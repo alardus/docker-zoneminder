@@ -19,6 +19,11 @@ Start zm:
 docker run -d --shm-size=4096m -e TZ=Europe/Moscow -v /volume3/camera/zm/zoneminder:/var/cache/zoneminder -v /volume3/camera/zm/etc_zm:/etc/zm -v /volume3/camera/zm/config:/config -v /volume3/camera/zm/log:/var/log/zm -e ZM_DB_HOST=db --net net --name zm -p {externalport}:(internalport) quantumobject/docker-zoneminder
 ```
 
+Setup camera (https://wiki.zoneminder.com/Hikvision):
+```
+rtsp://user:yourpassword@192.168.1.64:554/ch1/main/av_stream
+```
+
 # docker-zoneminder
 
 Docker container for [zoneminder v1.34.9][3]
